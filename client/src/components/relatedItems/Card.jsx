@@ -75,8 +75,8 @@ export default function CarouselCard({ product, name, carouselName }) {
   };
 
   const removeFromOutfit = () => {
-    setUserOutfit(state => [...state].filter(item => item.id !== product.id))
-  }
+    setUserOutfit(state => [...state].filter(item => item.id !== product.id));
+  };
 
   // RENDER METHODS
   const renderCard = cardName => {
@@ -95,7 +95,7 @@ export default function CarouselCard({ product, name, carouselName }) {
         <Suspense fallback={<h3>Loading...</h3>}>
           <CardStyle >
             <ActionStyle onClick={carouselName === 'related-items' ? () => modal.current.open() : () => removeFromOutfit()}>
-              <ActionButton name={carouselName ==='related-items' ? "open-modal" : "close"} />
+              <ActionButton name={carouselName === 'related-items' ? 'open-modal' : 'close'} />
             </ActionStyle>
             <Modal key={`modal-${product.id}`} ref={modal} product={product} />
             <ProductInfoStyle onClick={() => handleClick(product)} >

@@ -171,13 +171,13 @@ export default function Carousel({ name, relatedProductIds }) {
           {isAtBeginningIndex(relatedProducts, visibleProducts)
             ? <div style={{width: '40px'}}></div>
             : <BaseArrow className="carousel-left" onClick={(e) => scrollLeft(e)} >
-                <LeftArrow>
-                  <ScrollArrow direction={'left'} />
-                </LeftArrow>
+              <LeftArrow>
+                <ScrollArrow direction={'left'} />
+              </LeftArrow>
             </BaseArrow>}
           {
             <div className="carousel-middle" style={{display: 'flex', gap: '20px'}} >
-                {renderCarousel(name)}
+              {renderCarousel(name)}
             </div>
           }
           {isAtFinalIndex(relatedProducts, visibleProducts)
@@ -185,9 +185,9 @@ export default function Carousel({ name, relatedProductIds }) {
             : visibleProducts.length === relatedProducts.length
               ? <div style={{width: '40px'}}></div>
               : <BaseArrow className="carousel-right" onClick={(e) => scrollRight(e)} >
-                  <RightArrow>
-                    <ScrollArrow direction={'right'} />
-                  </RightArrow>
+                <RightArrow>
+                  <ScrollArrow direction={'right'} />
+                </RightArrow>
               </BaseArrow>}
         </Suspense>
       </div>
